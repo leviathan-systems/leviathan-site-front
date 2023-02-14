@@ -1,5 +1,3 @@
-import './style.scss';
-
 export default function Sobre() {
 	return (
 		<section className="section servicos">

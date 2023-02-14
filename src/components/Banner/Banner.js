@@ -1,0 +1,38 @@
+import Logo from '../../images/logo.svg';
+
+export default function Banner() {
+  return (
+    <section className="banner">
+      <div className="content container">
+        <div className="left">
+          <h2 className="title">Bem-vindo ao <strong className="name">Leviathan</strong></h2>
+
+          <div className="desc">
+            <p className="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas recusandae eveniet cum pariatur sint voluptate totam blanditiis laboriosam quam labore facere, earum incidunt laudantium harum fugit dicta enim adipisci consectetur.</p>
+
+            <p className="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi unde exercitationem facere amet itaque sapiente adipisci aperiam praesentium hic, est assumenda non repellendus recusandae quas quo magnam consectetur quos veniam.</p>
+          </div>
+
+          <a href="#" className="button-container">
+            <button className="button">Quero fazer um orçamento</button>
+          </a>
+        </div>
+
+        <div className="right">
+          <div className="logo-container">
+            <div className="first-layer">
+              <div className="second-layer">
+                <div className="orbit purple" />
+                <div className="orbit cyan" />
+                <div className="orbit red" />
+                <div className="orbit blue" />
+                <div className="orbit yellow" />
+                <img src={Logo} alt="" className="logo" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

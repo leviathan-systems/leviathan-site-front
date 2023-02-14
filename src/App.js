@@ -1,7 +1,7 @@
 import './styles/global.scss';
 
-import Sobre from './components/Sobre';
+import Home from './pages/Home';
 
 export default function App() {
-	return <Sobre />;
+	return <Home />;
 }
