@@ -14,7 +14,7 @@ export default function Banner() {
           </div>
 
           <a href="#" className="button-container">
-            <button className="button">Quero fazer um orçamento</button>
+            <button className="main-button">Quero fazer um orçamento</button>
           </a>
         </div>
 
