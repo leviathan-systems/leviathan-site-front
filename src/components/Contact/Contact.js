@@ -25,7 +25,7 @@ export default function Contact() {
 		try {
 			await api.post('/formulario-contato', data);
 		} catch (err) {
-			alert(`Erro ao cadastrar novo incidente, tente novamente.`);
+			console.log(`Falha, tente novamente mais tarde`);
 		}
 	}
 
@@ -40,7 +40,7 @@ export default function Contact() {
 			setSpotifyLink(data.link);
 			setlyrics(data.lyrics);
 		} catch (err) {
-			alert(`Erro ao cadastrar novo incidente, tente novamente.`);
+			console.log(`Falha, tente novamente mais tarde`);
 		}
 	}
 
@@ -72,7 +72,9 @@ export default function Contact() {
 								<textarea cols="30" rows="10" id="message" placeholder="Gostaria de um design para meu novo traje" value={message} onChange={e => setMessage(e.target.value)}></textarea>
 							</div>
 
-              <button type="submit" className="main-button">Enviar mensagem</button>
+							<button type="submit" className="main-button">
+								Enviar mensagem
+							</button>
 						</form>
 					</div>
 
@@ -127,17 +129,16 @@ export default function Contact() {
 						</div>
 
 						<a href={spotifyLink} target="_blank" className="button-spotify-container">
-              <button className="button-spotify">
-							  <img src={SpotifyLogo} class="icon" alt="" />
-                <p className="desc">Ouvir no SPOTIFY</p>
-              </button>
+							<button className="button-spotify">
+								<img src={SpotifyLogo} class="icon" alt="" />
+								<p className="desc">Ouvir no SPOTIFY</p>
+							</button>
 						</a>
 					</div>
 				</div>
 
-        <Logo_Planet />
+				<Logo_Planet />
 			</div>
-
 		</section>
 	);
 }
