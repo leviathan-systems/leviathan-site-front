@@ -3,10 +3,17 @@ import api from '../../services/api';
 import Design from '../../images/icons/design.svg';
 import Music from '../../images/icons/music.svg';
 import SpotifyLogo from '../../images/icons/spotify-logo.svg';
+import Loading from '../../images/loading.svg';
+
+import Modal from '../Modal/Modal';
 
 import Logo_Planet from '../Logo_Planet/Logo_Planet';
 
 export default function Contact() {
+	const [formStatusSuccess, setFormStatusSucess] = useState(true);
+	const [modalVisible, setModalVisible] = useState(false);
+	const [loading, setLoading] = useState(false);
+
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [subject, setSubject] = useState('');
@@ -17,16 +24,32 @@ export default function Contact() {
 	const [spotifyLink, setSpotifyLink] = useState('');
 	const [lyrics, setlyrics] = useState('');
 
+  const closeModal = () => { setModalVisible(false); }
+
 	async function handleNewLead(e) {
 		e.preventDefault();
+
+    setLoading(true);
 
 		const data = { name, email, subject, message };
 
 		try {
-			await api.post('/formulario-contato', data);
+			await api.post('/formulario-contato', data)
+      .then((response) => {
+        //  ERROR HANDLING
+        if (response.status == 400)
+          setFormStatusSucess(false);
+        if (response.status == 200)
+          setFormStatusSucess(true);
+        
+        setModalVisible(true);
+      });
 		} catch (err) {
-			console.log(`Falha, tente novamente mais tarde`);
+      setFormStatusSucess(false);
+			setModalVisible(true);
 		}
+    
+    setLoading(false);
 	}
 
 	async function loadLyrics() {
@@ -53,6 +76,14 @@ export default function Contact() {
 			<div className="content container">
 				<div className="left">
 					<div className="form">
+            {
+              loading?
+                <div className="loading">
+                  <img src={Loading} alt="" className="icon" />
+                </div>
+                : <div />
+            }
+
 						<h2 className="title">Fale conosco</h2>
 						<p className="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis maxime esse perspiciatis, sint accusantium, laudantium</p>
 
@@ -139,6 +170,12 @@ export default function Contact() {
 
 				<Logo_Planet basic={true}/>
 			</div>
+
+      {
+        modalVisible ?
+        <Modal success={formStatusSuccess} closeModal={closeModal} />
+        : <div/>
+        }
 		</section>
 	);
 }
