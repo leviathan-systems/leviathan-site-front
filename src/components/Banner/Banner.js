@@ -1,4 +1,4 @@
-import Logo from '../../images/logo.svg';
+import Logo_Planet from "../Logo_Planet/Logo_Planet";
 
 export default function Banner() {
   return (
@@ -19,18 +19,7 @@ export default function Banner() {
         </div>
 
         <div className="right">
-          <div className="logo-container">
-            <div className="first-layer">
-              <div className="second-layer">
-                <div className="orbit purple" />
-                <div className="orbit cyan" />
-                <div className="orbit red" />
-                <div className="orbit blue" />
-                <div className="orbit yellow" />
-                <img src={Logo} alt="" className="logo" />
-              </div>
-            </div>
-          </div>
+          <Logo_Planet />
         </div>
       </div>
     </section>

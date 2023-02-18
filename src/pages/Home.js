@@ -1,4 +1,5 @@
 import Banner from '../components/Banner/Banner.js';
+import Services from '../components/Services/Services.js';
 import About from '../components/About/About.js';
 import Contact from '../components/Contact/Contact.js';
 
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <main className="home-page">
       <Banner />
+      <Services />
       <About />
       <Contact />
     </main>

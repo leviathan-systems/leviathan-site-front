@@ -66,11 +66,11 @@ export default function Contact() {
 							</div>
 
 							<div className="form-group">
-								<label htmlFor="message">Mensagem:</label>
+								<label htmlFor="message">Sua mensagem:</label>
 								<textarea cols="30" rows="10" id="message" placeholder="Gostaria de um design para meu novo traje" value={message} onChange={e => setMessage(e.target.value)}></textarea>
 							</div>
 
-							<input type="submit" className="main-button" value="Quero fazer um orçamento" />
+              <button type="submit" className="main-button">Quero fazer um orçamento</button>
 						</form>
 					</div>
 
@@ -123,8 +123,11 @@ export default function Contact() {
 							</div>
 						</div>
 
-						<a href={spotifyLink} target="_blank" className="button-spotify">
-							<img src={SpotifyLogo} alt="" /> Ouvir no SPOTIFY
+						<a href={spotifyLink} target="_blank" className="button-spotify-container">
+              <button className="button-spotify">
+							  <img src={SpotifyLogo} class="icon" alt="" />
+                <p className="desc">Ouvir no SPOTIFY</p>
+              </button>
 						</a>
 					</div>
 				</div>

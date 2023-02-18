@@ -66,104 +66,11 @@ main.home-page {
 				position: relative;
 				z-index: -1;
 				padding-top: 4rem;
-
-				.logo-container {
-					position: absolute;
-					left: 0;
-					width: 100%;
-					z-index: -1;
-
-					.first-layer {
-						width: 600px;
-						height: 600px;
-						box-shadow: 0 0 0 80px rgba(#fff, 0.02);
-						border-radius: 50%;
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						animation: pulse 10s infinite linear;
-						position: relative;
-
-						&::after {
-							content: '';
-							position: absolute;
-							top: 0;
-							left: 0;
-							width: 100%;
-							height: 100%;
-							background-color: rgba(#fff, 0.04);
-							border-radius: 50%;
-							z-index: -1;
-							animation: pulse-transform 20s infinite linear;
-						}
-
-						.second-layer {
-							display: flex;
-							justify-content: center;
-							align-items: center;
-							width: 500px;
-							height: 500px;
-							border: 1px solid rgba(#fff, 0.1);
-							border-radius: 50%;
-							position: relative;
-
-							.orbit {
-								width: 10px;
-								height: 10px;
-								border-radius: 50%;
-								position: absolute;
-								left: -5px;
-								transform-origin: calc(50% + 250px) 50%;
-								animation: orbit-animation 20s infinite linear;
-
-								&.purple {
-									animation-delay: -6s;
-									animation-duration: 30s;
-									background-color: $purple;
-									width: 14px;
-									height: 14px;
-								}
-
-								&.cyan {
-									animation-delay: -10s;
-									animation-duration: 20s;
-									background-color: $cyan;
-								}
-
-								&.red {
-									animation-delay: -2s;
-									animation-duration: 20s;
-									background-color: $red;
-								}
-
-								&.blue {
-									animation-delay: -3s;
-									animation-duration: 40s;
-									background-color: $blue;
-									width: 16px;
-									height: 16px;
-								}
-
-								&.yellow {
-									animation-delay: -4s;
-									animation-duration: 13s;
-									background-color: $yellow;
-									width: 6px;
-									height: 6px;
-								}
-							}
-
-							.logo {
-								width: 80%;
-							}
-						}
-					}
-				}
 			}
 		}
 	}
 
-	section.about {
+	section.services {
 		.content {
 			> .text {
 				text-align: center;
@@ -350,20 +257,81 @@ main.home-page {
 		}
 	}
 
+  section.about {
+    padding: 4rem 0;
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+
+      .left {
+        max-width: 40%;
+        width: 100%;
+        position: relative;
+        
+        .image {
+          height: 100%;
+          position: absolute;
+          right: 0;
+        }
+      }
+
+      .right {
+        max-width: 45%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        text-align: right;
+
+        > .title {
+          margin-left: auto;
+          display: inline-block;
+          margin-bottom: 2rem;
+        }
+
+        > .desc {
+          text-align: right;
+        }
+
+        .list {
+          margin-top: 2rem;
+
+          .item {
+            .subtitle-row {
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+
+              .title {
+                font-family: $title;
+                font-size: 34px;
+                letter-spacing: 2px;
+                margin-right: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
 	section.contact {
 		.content {
 			display: flex;
 			justify-content: space-between;
 
 			> .left {
-				width: 65%;
+				max-width: 65%;
+        width: 100%;
 				display: flex;
 				justify-content: space-between;
 
 				.form {
 					background-color: #2e4581;
-					padding: 20px;
-					width: 60%;
+					padding: 1.5rem;
+					max-width: 60%;
+          width: 100%;
 					border-radius: 0px 7px 7px 0px;
 					position: relative;
 
@@ -377,11 +345,13 @@ main.home-page {
 						width: $width;
 						background: #3960c5;
 						opacity: 0.2;
-						border-radius: 7px 0px 0px 0px;
+						border-radius: 7px 0px 0px 7px;
 					}
 
 					.paragraph {
 						margin: 25px 0;
+            font-size: 14px;
+            max-width: 350px;
 					}
 
 					.form-group {
@@ -390,24 +360,41 @@ main.home-page {
 						margin-bottom: 15px;
 
 						label {
-							font-size: 13px;
+							font-size: 14px;
+              letter-spacing: 1px;
+              margin-bottom: .25rem;
 						}
 
 						input,
 						textarea {
-							background-color: rgba(217, 217, 217, 0.1);
+							background-color: rgba(#D9D9D9, 0.1);
 							border-radius: 10px;
-							width: 80%;
-							padding: 10px 15px;
+							width: 90%;
+							padding: .75rem 1rem;
 							color: $white;
 							margin-top: 5px;
 							resize: none;
+              letter-spacing: 1px;
+              line-height: 20px;
+
+              &::placeholder {
+                color: rgba(#D9D9D9, .3);
+              }
 						}
+
+            textarea {
+              height: 180px;
+            }
 					}
+
+          .main-button {
+            margin: 1rem 0 2rem;
+          }
 				}
 
 				.services {
-					width: 35%;
+					max-width: 37%;
+          width: 100%;
 					display: flex;
 					flex-direction: column;
 					justify-content: space-between;
@@ -417,7 +404,9 @@ main.home-page {
 						align-items: center;
 						background-color: #2e4581;
 						border-radius: 18px;
-						padding: 20px 10px;
+						padding: 2rem 1rem;
+
+            &:not(:last-child) { margin-bottom: 1rem; }
 
 						.icon {
 							opacity: 0.1;
@@ -432,11 +421,15 @@ main.home-page {
 								font-weight: 700;
 								font-size: 20px;
 								text-transform: uppercase;
+                font-family: $title;
+                letter-spacing: 1px;
+                line-height: 24px;
 							}
 
 							.text {
 								font-weight: 400;
-								font-size: 10px;
+								font-size: 12px;
+                line-height: 20px;
 							}
 						}
 					}
@@ -444,16 +437,20 @@ main.home-page {
 			}
 
 			> .right {
-				width: 30%;
+				max-width: 32%;
 
 				.lyrics {
 					font-style: italic;
 					font-weight: bold;
+          letter-spacing: 1px;
+          line-height: 22px;
+          font-size: 14px;
 				}
 
 				.down {
 					display: flex;
 					margin-top: 15px;
+          align-items: center;
 
 					.left {
 						display: flex;
@@ -461,35 +458,50 @@ main.home-page {
 
 						img {
 							height: 20px;
-							width: 20px;
-							margin-right: 5px;
+							margin-right: .5rem;
 						}
 
 						.song-name {
-							font-size: 14px;
+							font-size: 16px;
 							font-weight: bold;
+              font-family: $title;
+              line-height: 20px;
 						}
 
 						.song-band {
-							font-size: 8px;
+							font-size: 10px;
 							font-weight: 400;
+              font-family: $title;
 						}
 					}
 
-					.button-spotify {
-						background-color: #1db954;
-						display: flex;
-						align-items: center;
-						color: $black;
-						margin-left: 30px;
-						padding: 5px 10px;
-						font-weight: bold;
-						border-radius: 3px;
+          .button-spotify-container {
+            margin-left: 2rem;
 
-						img {
-							margin-right: 5px;
-						}
-					}
+            .button-spotify {
+              background-color: $spotify_green;
+              display: flex;
+              align-items: center;
+              color: $spotify_black;
+              padding: .5rem 1rem;
+              font-weight: bold;
+              border-radius: 3px;
+              font-size: 14px;
+              cursor: pointer;
+              
+              .desc {
+                font-family: $title;
+                line-height: 13px;
+                display: block;
+                white-space: nowrap;
+              }
+
+              .icon {
+                margin-right: .5rem;
+                width: 20px;
+              }
+            }
+          }
 				}
 			}
 		}

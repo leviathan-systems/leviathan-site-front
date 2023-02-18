@@ -1,141 +1,55 @@
-import Design from '../../images/icons/design.svg';
+import Rocket from '../../images/icons/rocket.svg';
+import Eyes from '../../images/icons/eyes.svg';
+import Star from '../../images/icons/star.svg';
+import Jellyfish from '../../images/jellyfish.png';
 
-function setActive(el) {
-	let item = el.currentTarget;
-	let itens = item.parentElement;
+export default function About() {
+  return (
+    <section className="about">
+      <div className="content container">
+        <div className="left">
+          <img src={Jellyfish} alt="" className="image" />
+        </div>
 
-	let wasActive = item.classList.contains('active');
+        <div className="right">
+          <h2 className="title">O que é a <strong className="name">Leviathan</strong></h2>
 
-	[...itens.children].forEach(element => {
-		element.classList.remove('active');
-	});
+          <div className="desc">
+            <p className="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, possimus. Adipisci eum officia et quidem atque facere ab non, ullam, cum incidunt velit sequi quasi nisi sit itaque quae ad?</p>
 
-	if (!wasActive) item.classList.add('active');
-}
+            <p className="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi consectetur commodit.</p>
+          </div>
 
-export default function Sobre() {
-	return (
-		<section className="about">
-			<div className="content container">
-				<div className="text">
-					<h2 className="title">Serviços</h2>
-					<div className="desc">
-						<p className="paragraph">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis maxime esse perspiciatis, sint accusantium, laudantium magnam voluptates id reprehenderit dolore sapiente odio optio.
-							Corrupti repudiandae voluptates iste quis reiciendis accusamus?
-						</p>
+          <ul className="list">
+            <li className="item">
+              <div className="subtitle-row">
+                <h3 className="title">Missão</h3>
+                <img src={Rocket} alt="" className="icon" />
+              </div>
 
-						<p className="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis atque rerum in porro doloremque, impedit accusamus incidunt.</p>
-					</div>
-				</div>
+              <p className="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolor quae voluptates vero ipsa. Dolores magni eos, odit ab ad sapiente placeat est beatae repellat quas similique accusamus tenetur? Quos.</p>
+            </li>
 
-				<div className="slider">
-					<div className="item purple" onClick={el => setActive(el)}>
-						<div className="circle">
-							<img src={Design} alt="" className="icon" />
-						</div>
+            <li className="item">
+              <div className="subtitle-row">
+                <h3 className="title">Visão</h3>
+                <img src={Eyes} alt="" className="icon" />
+              </div>
 
-						<div className="card">
-							<img src={Design} alt="" className="back-icon" />
-							<h3 className="title">Design</h3>
+              <p className="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolor quae voluptates vero ipsa. Dolores magni eos, odit ab ad sapiente placeat est beatae repellat quas similique accusamus tenetur? Quos.</p>
+            </li>
 
-							<div className="desc">
-								<p className="paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <li className="item">
+              <div className="subtitle-row">
+                <h3 className="title">Missão</h3>
+                <img src={Star} alt="" className="icon" />
+              </div>
 
-								<p className="paragraph">When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
-
-								<a href="#" className="button-container">
-									<button className="button">Quero um orçamento</button>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div className="item yellow" onClick={el => setActive(el)}>
-						<div className="circle">
-							<img src={Design} alt="" className="icon" />
-						</div>
-
-						<div className="card">
-							<img src={Design} alt="" className="back-icon" />
-							<h3 className="title">Design</h3>
-
-							<div className="desc">
-								<p className="paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-
-								<p className="paragraph">When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
-
-								<a href="#" className="button-container">
-									<button className="button">Quero um orçamento</button>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div className="item cyan" onClick={el => setActive(el)}>
-						<div className="circle">
-							<img src={Design} alt="" className="icon" />
-						</div>
-
-						<div className="card">
-							<img src={Design} alt="" className="back-icon" />
-							<h3 className="title">Design</h3>
-
-							<div className="desc">
-								<p className="paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-
-								<p className="paragraph">When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
-
-								<a href="#" className="button-container">
-									<button className="button">Quero um orçamento</button>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div className="item red" onClick={el => setActive(el)}>
-						<div className="circle">
-							<img src={Design} alt="" className="icon" />
-						</div>
-
-						<div className="card">
-							<img src={Design} alt="" className="back-icon" />
-							<h3 className="title">Design</h3>
-
-							<div className="desc">
-								<p className="paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-
-								<p className="paragraph">When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
-
-								<a href="#" className="button-container">
-									<button className="button">Quero um orçamento</button>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div className="item blue" onClick={el => setActive(el)}>
-						<div className="circle">
-							<img src={Design} alt="" className="icon" />
-						</div>
-
-						<div className="card">
-							<img src={Design} alt="" className="back-icon" />
-							<h3 className="title">Design</h3>
-
-							<div className="desc">
-								<p className="paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-
-								<p className="paragraph">When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
-
-								<a href="#" className="button-container">
-									<button className="button">Quero um orçamento</button>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+              <p className="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolor quae voluptates vero ipsa. Dolores magni eos, odit ab ad sapiente placeat est beatae repellat quas similique accusamus tenetur? Quos.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  )
 }
