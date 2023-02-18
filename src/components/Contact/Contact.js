@@ -130,14 +130,14 @@ export default function Contact() {
 
 						<a href={spotifyLink} target="_blank" className="button-spotify-container">
 							<button className="button-spotify">
-								<img src={SpotifyLogo} class="icon" alt="" />
+								<img src={SpotifyLogo} className="icon" alt="" />
 								<p className="desc">Ouvir no SPOTIFY</p>
 							</button>
 						</a>
 					</div>
 				</div>
 
-				<Logo_Planet />
+				<Logo_Planet basic={true}/>
 			</div>
 		</section>
 	);

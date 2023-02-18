@@ -109,12 +109,12 @@ main.home-page {
 				}
 
 				.item {
-					max-width: 20%;
 					min-width: 80px;
 					min-height: 80px;
 					width: 100%;
 					position: relative;
-					transition: 0.2s;
+					transition: .6s;
+          flex: 0 0 20%;
 
 					&:first-child,
 					&:last-child {
@@ -193,6 +193,8 @@ main.home-page {
 					}
 
 					&.active {
+            flex: 0 0 30%;
+
 						.circle {
 							top: calc(-200px - 40px);
 							left: 1rem;
@@ -513,42 +515,5 @@ main.home-page {
         height: 500px;
       }
 		}
-	}
-}
-
-@keyframes orbit-animation {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-@keyframes pulse {
-	0% {
-		box-shadow: 0 0 0 80px rgba(#fff, 0.02);
-	}
-
-	50% {
-		box-shadow: 0 0 0 60px rgba(#fff, 0.02);
-	}
-
-	100% {
-		box-shadow: 0 0 0 80px rgba(#fff, 0.02);
-	}
-}
-
-@keyframes pulse-transform {
-	0% {
-		transform: scale(1);
-	}
-
-	50% {
-		transform: scale(1.05);
-	}
-
-	100% {
-		transform: scale(1);
 	}
 }
