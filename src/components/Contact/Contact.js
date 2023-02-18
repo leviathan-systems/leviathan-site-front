@@ -4,6 +4,8 @@ import Design from '../../images/icons/design.svg';
 import Music from '../../images/icons/music.svg';
 import SpotifyLogo from '../../images/icons/spotify-logo.svg';
 
+import Logo_Planet from '../Logo_Planet/Logo_Planet';
+
 export default function Contact() {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
@@ -70,7 +72,7 @@ export default function Contact() {
 								<textarea cols="30" rows="10" id="message" placeholder="Gostaria de um design para meu novo traje" value={message} onChange={e => setMessage(e.target.value)}></textarea>
 							</div>
 
-              <button type="submit" className="main-button">Quero fazer um orçamento</button>
+              <button type="submit" className="main-button">Enviar mensagem</button>
 						</form>
 					</div>
 
@@ -112,6 +114,7 @@ export default function Contact() {
 						</div>
 					</div>
 				</div>
+
 				<div className="right">
 					<p className="lyrics">“{lyrics}”</p>
 					<div className="down">
@@ -131,7 +134,10 @@ export default function Contact() {
 						</a>
 					</div>
 				</div>
+
+        <Logo_Planet />
 			</div>
+
 		</section>
 	);
 }
