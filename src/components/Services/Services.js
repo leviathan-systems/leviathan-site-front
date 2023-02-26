@@ -2,6 +2,8 @@ import Design from '../../images/icons/design.svg';
 
 import { scrollTo } from '../../helpers/utils';
 
+import { Tooltip } from 'react-tooltip';
+
 
 export default function Services () {
   function setActive(el) {
@@ -50,7 +52,7 @@ export default function Services () {
 
 				<div className="slider">
 					<div className="item purple">
-						<div className="circle" onClick={el => setActive(el)}>
+						<div className="circle" data-tooltip-id="my-tooltip" data-tooltip-content="Design" data-tooltip-place="bottom" onClick={el => setActive(el)}>
 							<img src={Design} alt="" className="icon" />
 						</div>
 
@@ -71,7 +73,7 @@ export default function Services () {
 					</div>
 
 					<div className="item yellow">
-						<div className="circle" onClick={el => setActive(el)}>
+						<div className="circle" data-tooltip-id="my-tooltip" data-tooltip-content="Desenvolvimento de Sites e aplicativos" data-tooltip-place="bottom" onClick={el => setActive(el)}>
 							<img src={Design} alt="" className="icon" />
 						</div>
 
@@ -92,7 +94,7 @@ export default function Services () {
 					</div>
 
 					<div className="item cyan">
-						<div className="circle" onClick={el => setActive(el)}>
+						<div className="circle" data-tooltip-id="my-tooltip" data-tooltip-content="Design" data-tooltip-place="bottom" onClick={el => setActive(el)}>
 							<img src={Design} alt="" className="icon" />
 						</div>
 
@@ -113,7 +115,7 @@ export default function Services () {
 					</div>
 
 					<div className="item red">
-						<div className="circle" onClick={el => setActive(el)}>
+						<div className="circle" data-tooltip-id="my-tooltip" data-tooltip-content="Design" data-tooltip-place="bottom" onClick={el => setActive(el)}>
 							<img src={Design} alt="" className="icon" />
 						</div>
 
@@ -134,7 +136,7 @@ export default function Services () {
 					</div>
 
 					<div className="item blue">
-						<div className="circle" onClick={el => setActive(el)}>
+						<div className="circle" data-tooltip-id="my-tooltip" data-tooltip-content="Design" data-tooltip-place="bottom" onClick={el => setActive(el)}>
 							<img src={Design} alt="" className="icon" />
 						</div>
 
@@ -155,6 +157,7 @@ export default function Services () {
 					</div>
 				</div>
 			</div>
+      <Tooltip id="my-tooltip" />
 		</section>
 	);
 }

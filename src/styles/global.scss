@@ -109,6 +109,8 @@ p.paragraph {
 
 
 @media screen and (max-width: $mobile) {
+  .react-tooltip { display: none; }
+
   h1, h2 {
 	  &, * {
       text-align: center;
