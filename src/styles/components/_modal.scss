@@ -20,6 +20,7 @@ section.modal {
     width: 100%;
     box-shadow: 0 10px 20px rgba(#000, .2);
     position: relative;
+    animation: pop-up .3s;
 
     .close {
       position: absolute;
@@ -52,5 +53,17 @@ section.modal {
     .desc {
       text-align: center;
     }
+  }
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }

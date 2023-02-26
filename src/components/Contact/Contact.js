@@ -72,7 +72,7 @@ export default function Contact() {
 	}, []);
 
 	return (
-		<section className="contact">
+		<section className="contact" id="contato">
 			<div className="content container">
 				<div className="left">
 					<div className="form">

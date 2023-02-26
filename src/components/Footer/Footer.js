@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="content container">
-        <p className="paragraph">Leviathan © <span className="opacity">Todos os direitos reservados</span></p>
+        <p className="paragraph">Leviathan Web & Software © <span className="opacity">Todos os direitos reservados</span></p>
       </div>
     </footer>
   );

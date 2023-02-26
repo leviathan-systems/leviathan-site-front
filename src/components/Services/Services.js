@@ -1,20 +1,39 @@
 import Design from '../../images/icons/design.svg';
 
-function setActive(el) {
-	let item = el.currentTarget;
-	let itens = item.parentElement;
+import { scrollTo } from '../../helpers/utils';
 
-	let wasActive = item.classList.contains('active');
-
-	[...itens.children].forEach(element => {
-		element.classList.remove('active');
-	});
-
-	if (!wasActive) item.classList.add('active');
-}
 
 export default function Services () {
-	return (
+  function setActive(el) {
+    let circle = el.currentTarget;
+    let item = circle.parentElement;
+
+    let slider = item.parentElement;
+    let all_itens = [...slider.children];
+    
+    let wasActive = item.classList.contains('active');
+  
+    all_itens.forEach(element => {
+      element.classList.remove('active');
+      element.classList.add('inactive');
+    });
+    
+    if (!wasActive) {
+      item.classList.add('active');
+      item.classList.remove('inactive');
+      slider.classList.add('active');
+      return;
+    }
+
+    slider.classList.remove('active');
+
+
+    all_itens.forEach(element => {
+      element.classList.remove('inactive');
+    });
+  }
+
+  return (
 		<section className="services">
 			<div className="content container">
 				<div className="text">
@@ -30,8 +49,8 @@ export default function Services () {
 				</div>
 
 				<div className="slider">
-					<div className="item purple" onClick={el => setActive(el)}>
-						<div className="circle">
+					<div className="item purple">
+						<div className="circle" onClick={el => setActive(el)}>
 							<img src={Design} alt="" className="icon" />
 						</div>
 
@@ -44,15 +63,15 @@ export default function Services () {
 
 								<p className="paragraph">When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
 
-								<a href="#" className="button-container">
+								<a onClick={() => scrollTo("#contato")} className="button-container">
 									<button className="button">Quero um orçamento</button>
 								</a>
 							</div>
 						</div>
 					</div>
 
-					<div className="item yellow" onClick={el => setActive(el)}>
-						<div className="circle">
+					<div className="item yellow">
+						<div className="circle" onClick={el => setActive(el)}>
 							<img src={Design} alt="" className="icon" />
 						</div>
 
@@ -65,15 +84,15 @@ export default function Services () {
 
 								<p className="paragraph">When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
 
-								<a href="#" className="button-container">
+								<a onClick={() => scrollTo("#contato")} className="button-container">
 									<button className="button">Quero um orçamento</button>
 								</a>
 							</div>
 						</div>
 					</div>
 
-					<div className="item cyan" onClick={el => setActive(el)}>
-						<div className="circle">
+					<div className="item cyan">
+						<div className="circle" onClick={el => setActive(el)}>
 							<img src={Design} alt="" className="icon" />
 						</div>
 
@@ -86,15 +105,15 @@ export default function Services () {
 
 								<p className="paragraph">When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
 
-								<a href="#" className="button-container">
+								<a onClick={() => scrollTo("#contato")} className="button-container">
 									<button className="button">Quero um orçamento</button>
 								</a>
 							</div>
 						</div>
 					</div>
 
-					<div className="item red" onClick={el => setActive(el)}>
-						<div className="circle">
+					<div className="item red">
+						<div className="circle" onClick={el => setActive(el)}>
 							<img src={Design} alt="" className="icon" />
 						</div>
 
@@ -107,15 +126,15 @@ export default function Services () {
 
 								<p className="paragraph">When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
 
-								<a href="#" className="button-container">
+								<a onClick={() => scrollTo("#contato")} className="button-container">
 									<button className="button">Quero um orçamento</button>
 								</a>
 							</div>
 						</div>
 					</div>
 
-					<div className="item blue" onClick={el => setActive(el)}>
-						<div className="circle">
+					<div className="item blue">
+						<div className="circle" onClick={el => setActive(el)}>
 							<img src={Design} alt="" className="icon" />
 						</div>
 
@@ -128,7 +147,7 @@ export default function Services () {
 
 								<p className="paragraph">When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
 
-								<a href="#" className="button-container">
+								<a onClick={() => scrollTo("#contato")} className="button-container">
 									<button className="button">Quero um orçamento</button>
 								</a>
 							</div>

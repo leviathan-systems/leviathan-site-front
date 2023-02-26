@@ -1,0 +1,237 @@
+section.contact {
+  > .content {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+
+    > .left {
+      max-width: 65%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .form {
+        background-color: #2e4581;
+        padding: 1.5rem;
+        max-width: 60%;
+        width: 100%;
+        border-radius: 0px 7px 7px 0px;
+        position: relative;
+
+        .loading {
+          position: absolute;
+          left: 0;
+          top: 0;
+          background-color: #2e4581;
+          z-index: 99;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .icon {
+            width: 100px;
+          }
+        }
+
+        &::after {
+          content: '';
+          $width: 15px;
+          position: absolute;
+          top: 0;
+          left: -$width;
+          height: 100%;
+          width: $width;
+          background: #3960c5;
+          opacity: 0.2;
+          border-radius: 7px 0px 0px 7px;
+        }
+
+        .paragraph {
+          margin: 25px 0;
+          font-size: 14px;
+          max-width: 350px;
+        }
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 15px;
+
+          label {
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: .25rem;
+          }
+
+          input,
+          textarea {
+            background-color: rgba(#D9D9D9, 0.1);
+            border-radius: 10px;
+            width: 90%;
+            padding: .75rem 1rem;
+            color: $white;
+            margin-top: 5px;
+            resize: none;
+            letter-spacing: 1px;
+            line-height: 20px;
+
+            &::placeholder {
+              color: rgba(#D9D9D9, .3);
+            }
+          }
+
+          textarea {
+            height: 180px;
+          }
+        }
+
+        .main-button {
+          margin: 1rem 0 2rem;
+        }
+      }
+
+      .services {
+        max-width: 37%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .service {
+          display: flex;
+          align-items: center;
+          background-color: #2e4581;
+          border-radius: 18px;
+          padding: 2rem 1rem;
+          transition: .2s;
+          cursor: pointer;
+          
+          &:hover {
+            background-color: $blue;
+            transform: scale(1.02);
+
+            .icon {
+              opacity: 1;
+            }
+          }
+
+          &:not(:last-child) { margin-bottom: 1rem; }
+
+          .icon {
+            opacity: 0.1;
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            transition: .2s;
+          }
+
+          .text-group {
+            margin-left: 1rem;
+
+            .subtitle {
+              font-weight: 700;
+              font-size: 20px;
+              text-transform: uppercase;
+              font-family: $title;
+              letter-spacing: 1px;
+              line-height: 24px;
+            }
+
+            .text {
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    > .right {
+      max-width: 32%;
+
+      .lyrics {
+        font-style: italic;
+        font-weight: bold;
+        letter-spacing: 1px;
+        line-height: 22px;
+        font-size: 14px;
+      }
+
+      .down {
+        display: flex;
+        margin-top: 15px;
+        align-items: center;
+
+        .left {
+          display: flex;
+          align-items: center;
+
+          img {
+            height: 20px;
+            margin-right: .5rem;
+          }
+
+          .song-name {
+            font-size: 16px;
+            font-weight: bold;
+            font-family: $title;
+            line-height: 20px;
+          }
+
+          .song-band {
+            font-size: 10px;
+            font-weight: 400;
+            font-family: $title;
+          }
+        }
+
+        .button-spotify-container {
+          margin-left: 2rem;
+
+          .button-spotify {
+            background-color: $spotify_green;
+            display: flex;
+            align-items: center;
+            color: $spotify_black;
+            padding: .5rem 1rem;
+            font-weight: bold;
+            border-radius: 3px;
+            font-size: 14px;
+            cursor: pointer;
+            
+            .desc {
+              font-family: $title;
+              line-height: 13px;
+              display: block;
+              white-space: nowrap;
+            }
+
+            .icon {
+              margin-right: .5rem;
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    main.logo_planet {
+      position: absolute;
+      right: -50px;
+      bottom: -200px;
+      z-index: -1;
+      width: 500px;
+      height: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  section.contact {
+    display: none;
+  }
+}

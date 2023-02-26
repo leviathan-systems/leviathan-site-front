@@ -9,8 +9,14 @@ footer.footer {
       font-family: $title;
 
       .opacity {
-        opacity: .2;
+        opacity: .4;
       }
     }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  footer.footer {
+    display: none;
   }
 }

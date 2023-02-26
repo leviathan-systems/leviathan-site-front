@@ -1,5 +1,7 @@
 import Logo_Planet from "../Logo_Planet/Logo_Planet";
 
+import { scrollTo } from '../../helpers/utils';
+
 export default function Banner() {
   return (
     <section className="banner">
@@ -13,7 +15,7 @@ export default function Banner() {
             <p className="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi unde exercitationem facere amet itaque sapiente adipisci aperiam praesentium hic, est assumenda non repellendus recusandae quas quo magnam consectetur quos veniam.</p>
           </div>
 
-          <a href="#" className="button-container">
+          <a onClick={() => { scrollTo("#contato") }} className="button-container">
             <button className="main-button">Quero fazer um orçamento</button>
           </a>
         </div>
