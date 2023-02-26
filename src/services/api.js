@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5030",
+  baseURL: "https://api.leviathan.dev.br/",
 });
 
 export default api;
